@@ -35,3 +35,19 @@ class linkingList:
             else:
                 pre = pre.next
                 run = run.next
+    
+    def pop(self):
+        pre = self.head
+        run = self.head.next
+        while run.next:
+            pre = pre.next
+            run = run.next
+                
+        pre.next = None
+        return run.value
+    
+    def quene(self):
+       pre = self.head
+       ans = pre.next.value
+       pre.next = pre.next.next
+       return ans
